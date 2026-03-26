@@ -1,29 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# This script displays messages and manages a PID file with signal handling
 
 # Create PID file
 echo $$ > /tmp/myscript.pid
 
-# Function to handle SIGINT (Ctrl+C)
-handle_sigint() {
-    echo "Y U no love me?!"
-}
+# Handle SIGINT (Ctrl+C)
+trap 'echo "Y U no love me?!"' SIGINT
 
-# Function to handle SIGTERM
-handle_sigterm() {
-    echo "I hate the kill command"
-    cleanup
-}
+# Handle SIGTERM: display message then cleanup
+trap 'echo "I hate the kill command"; rm -f /tmp/myscript.pid; exit 0' SIGTERM
 
-# Function to handle SIGQUIT or termination cleanup
-cleanup() {
-    rm -f /tmp/myscript.pid
-    exit 0
-}
-
-# Trap signals
-trap handle_sigint SIGINT
-trap handle_sigterm SIGTERM
-trap cleanup SIGQUIT
+# Handle SIGQUIT: cleanup only
+trap 'rm -f /tmp/myscript.pid; exit 0' SIGQUIT
 
 # Infinite loop
 while true; do
