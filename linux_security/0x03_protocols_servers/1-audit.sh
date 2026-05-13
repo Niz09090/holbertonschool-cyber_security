@@ -1,2 +1,2 @@
 #!/bin/bash
-awk '!/^#/ && !/^$/' /etc/ssh/sshd_config
+grep -vP "^#|^$" /etc/ssh/sshd_config
