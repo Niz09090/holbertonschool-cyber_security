@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -iE "tls|starttls" /etc/postfix/main.cf || echo "STARTTLS not configured"
+grep "smtpd_tls" /etc/postfix/main.cf 2>/dev/null || echo "STARTTLS not configured"
