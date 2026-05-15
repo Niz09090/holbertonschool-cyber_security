@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo sshd -T | grep -E '^(kbdinteractiveauthentication|usepam|x11forwarding|printmotd|acceptenv|subsystem|passwordauthentication|permitrootlogin|authorizedkeysfile|tcpkeepalive)'
+grep -E "^(Include|KbdInteractiveAuthentication|UsePAM|X11Forwarding|PrintMotd|AcceptEnv|Subsystem|PasswordAuthentication|PermitRootLogin|AuthorizedKeysFile|TCPKeepAlive)" /etc/ssh/sshd_config
