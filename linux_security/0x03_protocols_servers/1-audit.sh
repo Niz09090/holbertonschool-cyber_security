@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -vP "^#|^$" /etc/ssh/sshd_config
+sudo sshd -T | grep -E '^(kbdinteractiveauthentication|usepam|x11forwarding|printmotd|acceptenv|subsystem|passwordauthentication|permitrootlogin|authorizedkeysfile|tcpkeepalive)'
