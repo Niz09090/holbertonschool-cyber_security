@@ -1,2 +1,3 @@
 #!/bin/bash
-grep -P '^(?!\s*#|(?!\n)\s*$)' /etc/ssh/sshd_config
+grep -P "^(?!\s*#|(?!
+)\s*$)" /etc/ssh/sshd_config
