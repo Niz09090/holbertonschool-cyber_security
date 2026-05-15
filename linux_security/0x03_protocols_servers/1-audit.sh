@@ -1,3 +1,2 @@
 #!/bin/bash
-grep -P "^(?!\s*#|(?!
-)\s*$)" /etc/ssh/sshd_config
+grep '^[[:alpha:]]' /etc/ssh/sshd_config
