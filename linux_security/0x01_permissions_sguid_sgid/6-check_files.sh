@@ -1,2 +1,3 @@
 #!/bin/bash
-find $1 -perm /6000 -mtime 0 -exec ls -l {} \;
+find $1 -perm /6000 -mtime -1 -exec ls -l {} \;#!/bin/bash
+
