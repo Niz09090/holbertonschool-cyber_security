@@ -1,0 +1,1 @@
+dig @<target IP> passive.hbtn TXT +noall +answer
