@@ -1,1 +1,1 @@
-dig @<target IP> passive.hbtn TXT +noall +answer
+fb0136625228a715f0f8ebd5a44f8816
