@@ -1,2 +1,2 @@
 #!/bin/bash
-john --wordlist=/usr/share/wordlists/rockyou.txt "$1" > /dev/null && awk -F: '{print $2}' ~/.john/john.pot > 4-password.txt
+john --wordlist=/usr/share/wordlists/rockyou.txt "$1" > /dev/null && john --show "$1" | head -n 3 | cut -d: -f2 > 4-password.txt
